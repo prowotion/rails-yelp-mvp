@@ -8,9 +8,16 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-# chinese italian japanese french belgian
+
+# On clean
+Restaurant.destroy_all
+
+
+# On crée les resto + reviews
 resto1 = Restaurant.new(name: "Epicure", category: "french", address: "75008 Paris")
 resto1.save!
+
+
 
 resto2 = Restaurant.new(name: "Great wall", category: "chinese", address: "44100 Nantes")
 resto2.save!

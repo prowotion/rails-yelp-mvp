@@ -2,18 +2,17 @@
 
 <p style="color: green"><%= notice %></p>
 <ul>
-  <li><%= @restaurant.name %></li>
-  <li><%= @restaurant.address %></li>
-  <li><%= @restaurant.category %></li>
-  <li><%= @restaurant.phone_number %></li>
+  <li><strong>Name:</strong> <%= @restaurant.name %></li>
+  <li><strong>Address:</strong> <%= @restaurant.address %></li>
+  <li><strong>Cat:</strong> <%= @restaurant.category %></li>
+  <li><strong>Phone:</strong> <%= @restaurant.phone_number ? @restaurant.phone_number : 'N/A' %></li>
 </ul>
 
 <h2>Reviews</h2>
-<p>
+<ul>
   <% @restaurant.reviews.each do |review| %>
-    <%= review.content %>
+    <li><%= review.rating %>/5 - <%= review.content %></li>
   <% end %>
-</p>
+</ul>
 
 <%= link_to 'écrire un avis', new_restaurant_review_path(@restaurant) %>
-<%= link_to 'revenir à la liste des restos', restaurants_path %>
