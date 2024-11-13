@@ -4,7 +4,7 @@ class RestaurantsController < ApplicationController
   end
 
   def show
-    
+
     @restaurant = Restaurant.find(params[:id])
   end
 
@@ -16,8 +16,8 @@ class RestaurantsController < ApplicationController
   # et être redirigé vers la vue show de la page de ce nouveau restaurant.
   def create
     @restaurant = Restaurant.new(restaurant_params)
-    if @restaurant.save!
-      redirect_to restaurant_show_path(@restaurant)
+    if @restaurant.save
+      redirect_to restaurant_path(@restaurant), notice: "Restaurant was successfully created."
     else
       render :new, status: :unprocessable_entity
     end

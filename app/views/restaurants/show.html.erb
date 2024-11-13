@@ -1,4 +1,6 @@
 <h1><%= @restaurant.name %></h1>
+
+<p style="color: green"><%= notice %></p>
 <ul>
   <li><%= @restaurant.name %></li>
   <li><%= @restaurant.address %></li>
@@ -13,5 +15,5 @@
   <% end %>
 </p>
 
-
+<%= link_to 'écrire un avis', new_restaurant_review_path(@restaurant) %>
 <%= link_to 'revenir à la liste des restos', restaurants_path %>
