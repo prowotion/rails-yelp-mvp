@@ -7,4 +7,21 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  resources :restaurants, only: ['index', 'new', 'create', 'show'] do
+    resources :reviews, only: ['new', 'create']
+  end
+
+  # # Un visiteur peut voir la liste de tous les restaurants.
+  # get '/restaurants', to: 'restaurants#index'
+
+  # # Un visiteur peut ajouter un nouveau restaurant et être redirigé vers la vue show de la page de ce nouveau restaurant.
+  # get '/restaurants/new', to: 'restaurants#new', as: 'new_restaurant'
+  # post '/restaurants', to: 'restaurants#create'
+
+  # # Un visiteur peut voir les détails d’un restaurant, avec tous les avis associés au restaurant.
+  # get 'restaurants/:id', to: 'restaurants#show', as: 'restaurant'
+
+  # # Un visiteur peut ajouter un nouvel avis à un restaurant.
+  # get '/restaurants/:restaurant_id/reviews/new', to: 'reviews#new', as: 'restaurant_reviews'
+  # post 'restaurants/:restaurant_id/reviews', to: 'reviews#create'
 end

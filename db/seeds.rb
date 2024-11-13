@@ -7,3 +7,19 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+# chinese italian japanese french belgian
+resto1 = Restaurant.new(name: "Epicure", category: "french", address: "75008 Paris")
+resto1.save!
+
+resto2 = Restaurant.new(name: "Great wall", category: "chinese", address: "44100 Nantes")
+resto2.save!
+
+resto3 = Restaurant.new(name: "Mario Pizza", category: "italian", address: "76600 Le Havre")
+resto3.save!
+
+resto4 = Restaurant.new(name: "Best sushi", category: "japanese", address: "44000 Nantes")
+resto4.save!
+
+resto5 = Restaurant.new(name: "Dédé la frite", category: "belgian", address: "44200 Nantes")
+resto5.save!
